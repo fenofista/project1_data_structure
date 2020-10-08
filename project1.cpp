@@ -25,6 +25,7 @@ int main()
         a.falling(a);
         then();
         detect_error();
+        int i;
         for (int i = 5; i <= n+4; i++)
         {
             for (int j = 1; j <= m; j++)
