@@ -1,111 +1,38 @@
-#include<iostream>
-using namespace std;
-int map[15][40];
+#include <iostream>
+#include "project1.h"
+//using namespace std;
+int map[20][45];
 int n,m;
-void T1(int place)
+int main()
 {
-    int high = 0;
-    while(map[place][high]==0 &&  map[place+2][high] ==0  && map[place+1][high+1]==0 && high<m-1){
-        high++;
-    }
-    if(high==0 || place<0 || place>n-3){
-        cout<<"game over"<<'\n';
-    }
-    map[place][high-1]=1;
-    map[place+1][high-1]=1;
-    map[place+2][high-1]=1;
-    map[place+1][high-0]=1;
-    
-}
-int main(){
-    cin>>n>>m;
+    cin >> n >> m;
     int place, direction;
     string form;
-    int type;
-    while(cin>>form){
-        if(form=="END"){
+    while (cin >> form)
+    {
+        if (form == "END")
+        {
             break;
         }
-        cin>>place>>direction;
-        place--;
-        if(form[0]=='T'){
-            if(form[1]=='1'){
-                T1(place+direction);
-            }
-            else if(form[1]=='2'){
-                
-            }
-            else if(form[1]=='3'){
-                
-            }
-            else if(form[1]=='4'){
-                
-            }
+        cin >> place >> direction;
+        
+        block a(form,place,direction);
+        if(place + direction >m || place+direction<=0){
+            error();
         }
-        else if(form[0]=='L'){
-            if(form[1]=='1'){
-
+        a.falling(a);
+        a.mov(a);
+        a.falling(a);
+        then();
+        detect_error();
+        for (int i = 5; i <= n+4; i++)
+        {
+            for (int j = 1; j <= m; j++)
+            {
+                cout << map[i][j];
             }
-            else if(form[1]=='2'){
-                
-            }
-            else if(form[1]=='3'){
-                
-            }
-            else if(form[1]=='4'){
-                
-            }
-        }
-        else if(form[0]=='J'){
-            if(form[1]=='1'){
-
-            }
-            else if(form[1]=='2'){
-                
-            }
-            else if(form[1]=='3'){
-                
-            }
-            else if(form[1]=='4'){
-                
-            }
-        }
-        else if(form[0]=='S'){
-            if(form[1]=='1'){
-
-            }
-            else if(form[1]=='2'){
-                
-            }
-        }
-        else if(form[0]=='Z'){
-            if(form[1]=='1'){
-
-            }
-            else if(form[1]=='2'){
-                
-            }
-        }
-        else if(form[0]=='I'){
-            if(form[1]=='1'){
-
-            }
-            else if(form[1]=='2'){
-                
-            }
-        }
-        else if(form[0]=='O'){
-            if(form[1]=='1'){
-
-            }
-        }
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                cout<<map[j][i];
-            }
-            cout<<'\n';
+            cout << '\n';
         }
     }
     return 0;
 }
-
