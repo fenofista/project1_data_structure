@@ -10,7 +10,7 @@ int main()
     string form;
     while (cin >> form)
     {
-        if (form == "END")
+        if (form == "End")
         {
             break;
         }
@@ -33,6 +33,7 @@ int main()
             }
             cout << '\n';
         }
+        cout<<'\n';
     }
     return 0;
 }

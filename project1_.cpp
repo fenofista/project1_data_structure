@@ -106,9 +106,9 @@ block::block(string s,int place, int move)
     }
     else if(s=="J2"){
         x1 = place;
-        y1 = 2;
+        y1 = 3;
         x2 = place;
-        y2 = 3;
+        y2 = 4;
         x3 = place+1;
         y3 = 4;
         x4 = place+2;
@@ -135,6 +135,50 @@ block::block(string s,int place, int move)
         y3 = 3;
         x4 = place+2;
         y4 = 4;
+        this->move = move;
+    }
+    else if(s=="S1"){
+        x1 = place+1;
+        y1 = 3;
+        x2 = place+2;
+        y2 = 3;
+        x3 = place;
+        y3 = 4;
+        x4 = place+1;
+        y4 = 4;
+        this->move = move;
+    }
+    else if(s=="S2"){
+        x1 = place;
+        y1 = 2;
+        x2 = place;
+        y2 = 3;
+        x3 = place+1;
+        y3 = 3;
+        x4 = place+1;
+        y4 = 4;
+        this->move = move;
+    }
+    else if(s=="Z1"){
+        x1 = place;
+        y1 = 3;
+        x2 = place+1;
+        y2 = 3;
+        x3 = place+1;
+        y3 = 4;
+        x4 = place+2;
+        y4 = 4;
+        this->move = move;
+    }
+    else if(s=="Z2"){
+        x1 = place;
+        y1 = 3;
+        x2 = place;
+        y2 = 4;
+        x3 = place+1;
+        y3 = 2;
+        x4 = place+1;
+        y4 = 3;
         this->move = move;
     }
     else if(s=="I1"){
