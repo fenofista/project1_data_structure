@@ -217,7 +217,7 @@ block::block(string s,int place, int move)
 }
 void error()
 {
-    cout<<"game over"<<'\n';
+    //cout<<"game over"<<'\n';
 }
 int* test()
 {
